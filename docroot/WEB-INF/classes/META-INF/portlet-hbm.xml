@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="ru.psavinov.liferay.langlearn.model.LLSettings" />
+	<import class="ru.psavinov.liferay.langlearn.model.LLStat" />
+	<import class="ru.psavinov.liferay.langlearn.model.LLWord" />
+	<import class="ru.psavinov.liferay.langlearn.model.LLWordPair" />
+	<class name="ru.psavinov.liferay.langlearn.model.impl.LLSettingsImpl" table="LangLearn_LLSettings">
+		<cache usage="read-write" />
+		<id name="settingsId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="localeFrom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="localeTo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="wordsPerDay" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="mode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="mode_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="ru.psavinov.liferay.langlearn.model.impl.LLStatImpl" table="LangLearn_LLStat">
+		<cache usage="read-write" />
+		<id name="statId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="statType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statString" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statInt" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statLong" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="ru.psavinov.liferay.langlearn.model.impl.LLWordImpl" table="LangLearn_LLWord">
+		<cache usage="read-write" />
+		<id name="wordId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="locale" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="word" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="ru.psavinov.liferay.langlearn.model.impl.LLWordPairImpl" table="LangLearn_LLWordPair">
+		<cache usage="read-write" />
+		<id name="wordPairId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="wordFromId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="wordToId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

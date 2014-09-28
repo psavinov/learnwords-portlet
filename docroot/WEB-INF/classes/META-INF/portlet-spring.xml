@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ru.psavinov.liferay.langlearn.service.LLSettingsLocalService" class="ru.psavinov.liferay.langlearn.service.impl.LLSettingsLocalServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLSettingsService" class="ru.psavinov.liferay.langlearn.service.impl.LLSettingsServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.persistence.LLSettingsPersistence" class="ru.psavinov.liferay.langlearn.service.persistence.LLSettingsPersistenceImpl" parent="basePersistence" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLStatLocalService" class="ru.psavinov.liferay.langlearn.service.impl.LLStatLocalServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLStatService" class="ru.psavinov.liferay.langlearn.service.impl.LLStatServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.persistence.LLStatPersistence" class="ru.psavinov.liferay.langlearn.service.persistence.LLStatPersistenceImpl" parent="basePersistence" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLWordLocalService" class="ru.psavinov.liferay.langlearn.service.impl.LLWordLocalServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLWordService" class="ru.psavinov.liferay.langlearn.service.impl.LLWordServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.persistence.LLWordPersistence" class="ru.psavinov.liferay.langlearn.service.persistence.LLWordPersistenceImpl" parent="basePersistence" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLWordPairLocalService" class="ru.psavinov.liferay.langlearn.service.impl.LLWordPairLocalServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.LLWordPairService" class="ru.psavinov.liferay.langlearn.service.impl.LLWordPairServiceImpl" />
+	<bean id="ru.psavinov.liferay.langlearn.service.persistence.LLWordPairPersistence" class="ru.psavinov.liferay.langlearn.service.persistence.LLWordPairPersistenceImpl" parent="basePersistence" />
+</beans>

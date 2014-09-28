@@ -1,0 +1,10 @@
+#buttonsDiv {
+  text-align: right; }
+
+.settingsTable {
+  width: 100%;
+  border-spacing: 5px; }
+
+.settingsTable td {
+  padding: 2px; }
+

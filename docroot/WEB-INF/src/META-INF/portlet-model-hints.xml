@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ru.psavinov.liferay.langlearn.model.LLSettings">
+		<field name="settingsId" type="long" />
+		<field name="localeFrom" type="String" />
+		<field name="localeTo" type="String" />
+		<field name="wordsPerDay" type="int" />
+		<field name="mode" type="int" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="ru.psavinov.liferay.langlearn.model.LLStat">
+		<field name="statId" type="long" />
+		<field name="statType" type="int" />
+		<field name="statString" type="String" />
+		<field name="statInt" type="int" />
+		<field name="statLong" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="ru.psavinov.liferay.langlearn.model.LLWord">
+		<field name="wordId" type="long" />
+		<field name="locale" type="String" />
+		<field name="word" type="String" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="ru.psavinov.liferay.langlearn.model.LLWordPair">
+		<field name="wordPairId" type="long" />
+		<field name="wordFromId" type="long" />
+		<field name="wordToId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>

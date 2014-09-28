@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="ru.psavinov.liferay.langlearn">
+	<author>Pavel Savinov</author>
+	<namespace>LangLearn</namespace>
+    <entity name="LLWord" local-service="true" human-name="LangLeardWord">
+        <column name="wordId" type="long" primary="true"></column>
+        <column name="locale" type="String"></column>
+        <column name="word" type="String"></column>
+        
+		<!-- Audit fields --> 
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+        <finder name="WordAndLocale" return-type="LLWord">
+            <finder-column name="word"/>
+            <finder-column name="locale"/>
+        </finder>
+        <finder name="Locale" return-type="Collection">
+        	<finder-column name="locale"/>	
+        </finder>
+    </entity>
+    <entity name="LLWordPair" local-service="true" human-name="LangLearnWordPair">
+        <column name="wordPairId" type="long" primary="true"></column>
+        <column name="wordFromId" type="long"></column>
+        <column name="wordToId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+        <finder name="WordFrom" return-type="Collection">
+            <finder-column name="wordFromId"></finder-column>
+        </finder>
+        <finder name="Words" return-type="LLWordPair">
+        	<finder-column name="wordFromId"/>
+        	<finder-column name="wordToId"/>
+        </finder>
+    </entity>
+    <entity name="LLSettings" local-service="true" human-name="LangLearnSettings">
+        <column name="settingsId" type="long" primary="true"/>
+        <column name="localeFrom" type="String"/>
+        <column name="localeTo" type="String"/>
+        <column name="wordsPerDay" type="int"/>
+        <column name="mode" type="int"/>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+        <finder name="UserId" return-type="LLSettings">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="LLStat" local-service="true" human-name="LangLearnStatistics">
+        <column name="statId" type="long" primary="true"></column>
+        <column name="statType" type="int"></column>
+        <column name="statString" type="String"></column>
+        <column name="statInt" type="int"></column>
+        <column name="statLong" type="long"/>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+        <finder name="StatCountPerDay" return-type="LLStat">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="createDate"></finder-column>
+            <finder-column name="statType"></finder-column>
+        </finder>
+        
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId"/>
+		</finder>
+		
+		<finder name="UserIdAndType" return-type="LLStat">
+			<finder-column name="userId"/>
+			<finder-column name="statType"/>
+		</finder>
+    </entity>
+</service-builder>
